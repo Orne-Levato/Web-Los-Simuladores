@@ -1,4 +1,25 @@
+/* =========================
+   RESET / BASE RESPONSIVE
+   ========================= */
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
 
 .home{
     background-color: #0c0c0c;
@@ -93,8 +114,9 @@
     z-index: 2;
     color: white;
     
-    width: 60%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box;
 
     padding: 40px;
 
@@ -108,13 +130,14 @@
 .titulo-video {
     margin: 0;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(4rem, 7vw, 5.5rem);
+    font-size: clamp(2.2rem, 9vw, 5rem);
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     line-height: 0.95;
     color: #FFFFFF;
     text-transform: uppercase;
     text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+    overflow-wrap: break-word;
 }
 
 .subtitulo-video {
@@ -127,13 +150,28 @@
 }
 
 @media (max-width: 760px) {
+    .textoVid {
+        padding: 24px;
+    }
+
     .titulo-video {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
+        font-size: clamp(1.9rem, 10vw, 2.6rem);
+        letter-spacing: 1px;
     }
 
     .subtitulo-video {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .textoVid {
+        padding: 18px;
+    }
+
+    .titulo-video {
+        font-size: 1.7rem;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -305,6 +343,22 @@
     }
 }
 
+@media (max-width: 480px) {
+    .carousel {
+        padding: 20px 40px;
+    }
+
+    .carousel button {
+        width: 34px;
+        height: 34px;
+        font-size: 22px;
+    }
+
+    .tarjeta img {
+        height: 240px;
+    }
+}
+
 /*fin carruselito*/
 
 
@@ -430,6 +484,41 @@
 }
 
 
+/* BOTÓN HAMBURGUESA (solo visible en mobile) */
+
+.nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.nav-toggle-label span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #b9d6bf;
+    border-radius: 2px;
+    transition: 0.25s ease;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
 .nav-links a {
 
     text-decoration: none;
@@ -468,6 +557,72 @@
     }
 }
 
+
+
+/* =========================
+   NAVBAR RESPONSIVE
+   ========================= */
+
+@media (max-width: 860px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        position: relative;
+    }
+
+    .brand .logo {
+        width: 90px !important;
+    }
+
+    .nav-toggle-label {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        margin-top: 16px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    /* el submenú de Temporadas queda siempre visible y en flujo normal,
+       ya que en touch no existe :hover */
+    .nav-dropdown-menu {
+        display: grid;
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin-top: 6px;
+        background: rgba(8, 152, 46, 0.06);
+        border: none;
+        box-shadow: none;
+        padding: 4px 4px 4px 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar {
+        padding: 12px 16px;
+    }
+
+    .brand .logo {
+        width: 70px !important;
+    }
+}
 
 
 /* BOTÓN HABLEMOS */
@@ -663,6 +818,19 @@
     padding: 40px 6%;
 }
 
+@media (max-width: 760px) {
+    .objtsJuntos {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 6%;
+    }
+
+    .objtsJuntos > img {
+        width: 200px !important;
+        align-self: center;
+    }
+}
+
 .bla{
     align-items: center;
     justify-content: space-between;
@@ -677,8 +845,12 @@
     min-width: 0;
     color: #fffefe;
     font-family: 'Courier New', Courier, monospace;
-   /*background: linear-gradient(135deg, #5E6B8A, #061c2c);*/
-    background-image: url('imagenes/mapita.jpg');
+    background-image:
+        linear-gradient(rgba(4, 12, 10, 0.75), rgba(4, 12, 10, 0.75)),
+        url('imagenes/mapita.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
     padding: 30px;
     /*margin: 50px;*/
     gap: 20px;
@@ -724,10 +896,34 @@
  .temp-info p {
      margin: 0; font-size: 17px; line-height: 1.7; color: #d6d6d6; text-align: justify; }
 
+@media (max-width: 760px) {
+    .temp {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .temp-image {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .temp-text h2 {
+        font-size: 26px;
+    }
+}
+
 
 
 .infoData{
-    display: column;
+    display: block;
+}
+
+.infoData p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 .PastelPapa{
@@ -946,6 +1142,10 @@
     .resena-card {
         flex: 0 0 280px;
         min-height: 220px;
+    }
+
+    .resenas-contenedor {
+        padding: 0 30px;
     }
 
 }
@@ -1565,5 +1765,3 @@
     }
 
 }
-
-
