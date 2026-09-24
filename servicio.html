@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los simuladores</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<header class="navbar">
+
+    <!-- LOGO A LA IZQUIERDA -->
+    <a href="index.html" class="brand">
+
+        <img src="imagenes/logito.png" alt="Logo" class="logo" style="width: 120px; height: auto;">
+        <!-- acá recortá el fondo de las palabras, y que queden las palabras blancas del logo con la linea verde que ya tiene. -->
+        
+    </a>
+
+
+    <!-- OPCIONES A LA DERECHA -->
+    <nav class="nav-links">
+
+        <div class="nav-dropdown">
+            <a href="temporadas.html" class="nav-dropdown-trigger">Temporadas</a>
+            <div class="nav-dropdown-menu">
+                <a href="temporadas.html#t1-cap1">T1 - Tarjeta de Navidad</a>
+                <a href="temporadas.html#t1-cap2">T1 - Diagnóstico rectoscópico</a>
+                <a href="temporadas.html#t1-cap3">T1 - Seguro de desempleo</a>
+                <a href="temporadas.html#t1-cap4">T1 - El testigo español</a>
+                <a href="temporadas.html#t1-cap5">T1 - El joven simulador</a>
+                <a href="temporadas.html#t1-cap6">T1 - El pequeño problema del gran hombre</a>
+                <a href="temporadas.html#t1-cap7">T1 - Fuera de cálculo</a>
+                <a href="temporadas.html#t1-cap8">T1 - El pacto Copérnico</a>
+                <a href="temporadas.html#t1-cap9">T1 - El último héroe</a>
+                <a href="temporadas.html#t1-cap10">T1 - Los impresentables</a>
+                <a href="temporadas.html#t1-cap11">T1 - El colaborador foráneo</a>
+                <a href="temporadas.html#t1-cap12">T1 - Marcela &amp; Paul</a>
+                <a href="temporadas.html#t1-cap13">T1 - Un trabajo involuntario</a>
+                <a href="temporadas.html#t2-cap1">T2 - Los cuatro notables</a>
+                <a href="temporadas.html#t2-cap2">T2 - Z-9000</a>
+                <a href="temporadas.html#t2-cap3">T2 - La gargantilla de las cuatro estaciones</a>
+                <a href="temporadas.html#t2-cap4">T2 - El clan Motul</a>
+                <a href="temporadas.html#t2-cap5">T2 - El vengador infantil</a>
+                <a href="temporadas.html#t2-cap6">T2 - El matrimonio mixto</a>
+                <a href="temporadas.html#t2-cap7">T2 - La Brigada B</a>
+                <a href="temporadas.html#t2-cap8">T2 - Fin de semana de descanso</a>
+                <a href="temporadas.html#t2-cap9">T2 - El debilitador social</a>
+                <a href="temporadas.html#t2-cap10">T2 - El anillo de Salomón</a>
+                <a href="temporadas.html#t2-cap11">T2 - Episodio final</a>
+            </div>
+        </div>
+
+        <a href="Test.html">Test</a> 
+
+        <a href="datosCuriosos.html">Datos Curiosos</a>
+
+        <a href="servicio.html">Servicio</a>
+
+
+    </nav>
+
+</header>
+
+<body class="servicio-page">
+
+    
+<section class="contacto">
+
+    <div class="contacto-contenido">
+
+        <h1>Contacto</h1>
+
+        <p>
+            ¿Tenés alguna inquietud o problema sin solución? Nosotros lo solucionamos. Completá el formulario y veremos si tomar su caso.
+        </p>
+
+        <form action="https://formsubmit.co/TU-EMAIL" method="POST">
+
+            <!-- NOMBRE -->
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    required>
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="campo">
+                <label for="email">Correo electrónico</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    placeholder="ejemplo@gmail.com"
+                    required>
+            </div>
+
+
+            <!-- ASUNTO -->
+            <div class="campo">
+                <label for="asunto">Asunto</label>
+                <input 
+                    type="text" 
+                    id="asunto" 
+                    name="asunto"
+                    placeholder="¿Sobre qué querés escribir?"
+                    required>
+            </div>
+
+
+            <!-- MENSAJE -->
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea 
+                    id="mensaje" 
+                    name="mensaje"
+                    rows="6"
+                    placeholder="Escribí tu mensaje..."
+                    required></textarea>
+            </div>
+
+
+            <!-- OPCIONES DE FORMSUBMIT -->
+            <input type="hidden" name="_subject" value="Nuevo mensaje - Los Simuladores">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+
+            <!-- BOTÓN -->
+            <button type="submit">
+                Enviar mensaje
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<section class="footer">
+
+    <div class="footer-content">
+        <p>© 2026 Los Simuladores. Todos los derechos reservados.</p>
+    </div>
+</section>
+
+    
+</body>
+</html>

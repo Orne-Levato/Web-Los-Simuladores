@@ -1,0 +1,1569 @@
+
+
+.home{
+    background-color: #0c0c0c;
+    background-size: cover;
+    
+}
+
+.messi{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.35)),
+        url(imagenes/fondoTotal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+
+
+/*Index*/
+.hero {
+    min-height: 500px;
+   
+    background-image: url(imagenes/los-S-C.png);
+    
+    background-size: cover;
+    background-origin: content-box;
+    /*background-clip: content-box;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5%;
+
+    
+}
+
+/*titulo index*/
+.hero-content{
+    position: absolute ;
+    top: 8%;
+    right: 7%;
+
+    text-align: right;
+    padding: 10px 20px ;
+    
+    
+}
+
+
+/*videito del index*/
+.faina{
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+
+    /*para que esté arriba de todo*/
+   padding-top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* VIDEO DE FONDO */
+.video-fondo {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+/* CAPA OSCURA */
+.overlay {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.774);
+
+    z-index: 1;
+}
+
+
+/* BLOQUE DEL TEXTO */
+.textoVid {
+    position: relative;
+
+    z-index: 2;
+    color: white;
+    
+    width: 60%;
+    max-width: 700px;
+
+    padding: 40px;
+
+    background: transparent;
+
+    
+
+    text-align: center;
+}
+
+.titulo-video {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(4rem, 7vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 0.95;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.subtitulo-video {
+    margin: 24px 0 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-style: italic;
+    line-height: 1.5;
+    color: #D1D5DB;
+}
+
+@media (max-width: 760px) {
+    .titulo-video {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .subtitulo-video {
+        font-size: 1.2rem;
+    }
+}
+
+/*fin videito del index<(?*/
+
+.dos-titulo{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(32px, 5cv, 80px); 
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: white;
+    /* estética CRT */
+    text-shadow:
+        2px 0 rgba(255, 0, 0, 0.5),
+        -2px 0 rgba(0, 255, 255, 0.4);
+
+    white-space: nowrap;
+}
+
+.subtitle {
+    margin-top: 18px;
+
+    font-family:
+        "Courier New",
+        "Lucida Console",
+        monospace;
+
+    font-size: clamp(14px, 1.5vw, 24px);
+
+    letter-spacing: 5px;
+
+    color: rgb(236, 229, 229);
+
+    opacity: 0.8;
+
+    /* LIMITA EL ANCHO */
+    max-width: 800px;
+
+    /* mantiene el texto alineado a la derecha */
+    margin-left: auto;
+
+    /* permite que el texto baje de línea */
+    white-space: normal;
+
+}
+
+/*seccion carruselito*/
+
+.contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 5%;
+}
+
+.carousel {
+    position: relative;
+    min-width: 0;
+    padding: 30px 70px;
+    /*background: #11131a;*/
+    background-image: url('imagenes/Obelisco.jpg');
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    
+}
+
+.tarjeta {
+    display: none;
+}
+
+.tarjeta.active {
+    display: block;
+}
+
+.tarjeta img {
+    display: block;
+    width: min(100%, 360px);
+    height: 360px;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: #789653;
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.carousel button:hover {
+    background: #91b267;
+}
+
+.carousel .anterior {
+    left: 15px;
+}
+
+.carousel .siguiente {
+    right: 15px;
+}
+
+
+.sidebar-item {
+    display: none;
+}
+
+.sidebar-item.active {
+    display: block;
+}
+
+.sidebar-item.active h3,
+.sidebar-item.active h4,
+.sidebar-item.active p {
+    visibility: hidden;
+}
+
+.sidebar-item.active::after {
+    content: "_";
+    display: inline-block;
+    margin-top: 8px;
+    animation: cursorTitila 0.8s steps(1, end) infinite;
+}
+
+@keyframes cursorTitila {
+    50% {
+        opacity: 0;
+    }
+}
+
+.sidebar {
+    border: 3px double #08982e;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 30px;
+    background-color: #041410;
+    color: #08982e;
+    font-family: "Courier New", Courier, monospace;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.199);
+    box-shadow: inset 0 0 0 2px rgba(7, 32, 39, 0.8), 0 0 0 2px #28623A;
+}
+
+@media (max-width: 760px) {
+    .contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel {
+        padding: 25px 55px;
+    }
+
+    .tarjeta img {
+        height: 300px;
+    }
+}
+
+/*fin carruselito*/
+
+
+/*Header*/
+
+.navbar {
+
+    /* Hace que logo y opciones estén en una misma fila */
+    display: flex;
+
+    /* Logo a la izquierda y opciones a la derecha */
+    justify-content: space-between;
+
+    /* Centra todo verticalmente */
+    align-items: center;
+
+    /* Espacio interno */
+    padding: 20px 60px;
+
+    /* Línea inferior */
+    border-bottom: 1px solid #5B644D;
+
+    background-color: rgba(11, 15, 13, 0.92);
+    backdrop-filter: blur(8px); /* Efecto vidrio esmerilado oscuro */   
+    border-bottom: 1px solid #020e0f63;
+}
+
+
+/* LOGO */
+
+.brand {
+
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+   
+}
+
+
+.brand-logo {
+
+    width: 30px;
+
+    height: 30px;
+
+
+    border-radius: 50%;
+}
+
+.lola{
+    width: 40px;
+
+    height: 40px;
+
+
+    border-radius: 50%;
+}
+
+
+/* OPCIONES */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 10;
+    display: none;
+    width: 270px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding: 8px;
+    background: rgba(11, 15, 13, 0.98);
+    border: 1px solid #28623a;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    display: grid;
+    gap: 4px;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 8px 10px;
+    color: #b9d6bf;
+    font-size: 12px;
+    line-height: 1.25;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus {
+    color: #d8f3df;
+    background: rgba(8, 152, 46, 0.22);
+    border-color: #08982e;
+    animation: none;
+}
+
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: #6f736d;
+
+    font-size: 13px;
+
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: linear-gradient(
+        to bottom,
+        rgba(40, 98, 58, 0.05),
+        rgba(8, 152, 46, 0.22),
+        rgba(40, 98, 58, 0.05)
+    );
+    transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: #d8f3df;
+    border-color: #08982e;
+    animation: brilloVertical 1.2s ease-in-out infinite;
+}
+
+@keyframes brilloVertical {
+    0%, 100% {
+        box-shadow: 0 -2px 8px rgba(8, 152, 46, 0.25), 0 2px 8px rgba(8, 152, 46, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 -2px 8px rgba(8, 152, 46, 0.7), 0 2px 8px rgba(8, 152, 46, 0.25);
+    }
+}
+
+
+
+/* BOTÓN HABLEMOS */
+
+.nav-button {
+
+    background-color: #789653;
+
+    color: white !important;
+
+    padding: 10px 18px;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+}
+
+/* =========================
+   RESEÑAS
+========================= */
+
+.resenas {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.resenas h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 30px;
+}
+
+
+/* CARRUSEL */
+
+.resenas-contenedor {
+    position: relative;
+    min-width: 0;
+    padding: 0 48px;
+}
+
+.resenas-carrusel {
+    display: flex;
+    gap: 25px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+    padding: 10px 5px 25px;
+}
+
+.resenas-carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+.resenas-flecha {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(8, 152, 46, 0.7);
+    border-radius: 50%;
+    background: transparent;
+    color: #8de6a5;
+    font-size: 30px;
+    line-height: 28px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.resenas-flecha:hover {
+    background: rgba(8, 152, 46, 0.18);
+    color: white;
+    box-shadow: 0 0 12px rgba(8, 152, 46, 0.65);
+}
+
+.resenas-anterior {
+    left: 0;
+}
+
+.resenas-siguiente {
+    right: 0;
+}
+
+
+/* TARJETA */
+
+.resena-card {
+    flex: 0 0 320px;
+
+    min-height: 210px;
+
+    padding: 25px;
+
+    background: #111;
+
+    border: 1px solid #333;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.resena-card:hover {
+    transform: translateY(-5px);
+    border-color: #777;
+}
+
+
+/* ESTRELLAS */
+
+.estrellas {
+    color: #ffd700;
+
+    font-size: 22px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+/* COMENTARIO */
+
+.comentario {
+    color: #eee;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+    flex-grow: 1;
+}
+
+
+/* NOMBRE */
+
+.usuario {
+    color: #888;
+
+    font-size: 13px;
+
+    margin-top: 20px;
+
+    text-align: right;
+}
+
+/*Fin reseñas*/
+
+/* pag Lore*/
+.moco{
+    background-image: url(imagenes/fondoMesas.webp);
+    background-size: cover;
+    min-height: 100vh;
+    
+}
+
+.dea {
+     
+      /* background: var(--bg); */
+      /* padding: 42px 20px 70px; */
+      background-color: aliceblue;
+      align-items: center;
+      
+      
+}
+
+.objtsJuntos {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 6%;
+}
+
+.bla{
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.dea{
+    position:relative;
+    overflow:visible;
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    color: #fffefe;
+    font-family: 'Courier New', Courier, monospace;
+   /*background: linear-gradient(135deg, #5E6B8A, #061c2c);*/
+    background-image: url('imagenes/mapita.jpg');
+    padding: 30px;
+    /*margin: 50px;*/
+    gap: 20px;
+    
+    
+}
+
+
+/* SECCIÓN TEMPORADAS */
+.temp {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    width: 95%;
+    max-width: 1150px;
+    margin: 50px 0;
+    padding: 30px;
+    
+    background-color: #111;
+    color: #fff;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* IMAGEN */
+.temp-image {
+    width: 40%;
+    max-width: 400px;
+    height: 300px;
+    
+
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.temp-info { 
+    flex: 1; } 
+/* TÍTULO */ 
+.temp-info h2 { 
+    margin: 0 0 20px 0; font-size: 32px; color: white; } 
+/* TEXTO */
+ .temp-info p {
+     margin: 0; font-size: 17px; line-height: 1.7; color: #d6d6d6; text-align: justify; }
+
+
+
+.infoData{
+    display: column;
+}
+
+.PastelPapa{
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url('imagenes/cosmos_1257658575.jpeg');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+
+}
+
+.datos-page .PastelPapa {
+    background: transparent;
+}
+
+.datos-page {
+    min-height: 100vh;
+    margin: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+        url('imagenes/pala.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* BLOQUE TEMPORADAS */
+
+.mandarina {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    /* Fondo tipo ventana vieja */
+    background-color: #d8d8d8;
+
+    /* Borde estilo computadora antigua */
+    border: 3px solid #222;
+    box-shadow:
+        7px 7px 0px #111,
+        inset 2px 2px 0px #ffffff,
+        inset -2px -2px 0px #777;
+
+    /* Tipografía */
+    font-family: "Courier New", monospace;
+    color: #111;
+
+    box-sizing: border-box;
+}
+
+
+/* IMAGEN */
+
+.temp-image {
+    display: block;
+
+    width: 100%;
+    max-width: 650px;
+    height: 280px;
+
+    margin: 0 auto 25px auto;
+
+    object-fit: cover;
+
+    border: 3px solid #222;
+
+    box-shadow:
+        4px 4px 0px #555;
+}
+
+.mandarina spam {
+    display: block;
+    margin-top: 10px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+
+/* TÍTULO */
+
+.mandarina h1 {
+    margin: 10px 0 20px 0;
+
+    font-family: "Courier New", monospace;
+    font-size: 32px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    border-bottom: 2px dashed #333;
+    padding-bottom: 10px;
+}
+
+
+/* TEXTOS */
+
+.mandarina p {
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* LINK */
+
+
+/* =========================
+   BLOQUES DE CAPÍTULOS
+   ========================= */
+
+.cap {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 25px 0;
+    padding: 25px 30px;
+
+    box-sizing: border-box;
+
+    background-color: #111111;
+
+    border-left: 4px solid #6f2b6f;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* TÍTULO DEL CAPÍTULO */
+
+.cap h3 {
+    margin: 0 0 12px 0;
+
+    font-size: 22px;
+    color: #ffffff;
+}
+
+
+/* DESCRIPCIÓN */
+
+.cap p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #d0d0d0;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.cap:hover {
+    transform: translateX(5px);
+
+    border-left-color: #9b4f9b;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .cap {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .cap h3 {
+        font-size: 20px;
+    }
+
+    .cap p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+
+
+.footer{
+    background-color: #0e160cac;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 600px) {
+
+    .resenas {
+        padding: 45px 20px;
+    }
+
+    .resenas h2 {
+        font-size: 24px;
+    }
+
+    .resena-card {
+        flex: 0 0 280px;
+        min-height: 220px;
+    }
+
+}
+
+
+
+/* Servicio ------------------------------------*/
+
+.servicio-page {
+    min-height: 100vh;
+    margin: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+        url('imagenes/Los\ Simuladores\ \(1\).jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   FORMULARIO DE CONTACTO
+   ========================= */
+
+.contacto {
+    width: 90%;
+    max-width: 800px;
+
+    margin: 60px auto;
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    background-color: #111111;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+/* CONTENIDO */
+
+.contacto-contenido h1 {
+    margin-top: 0;
+
+    text-align: center;
+
+    font-size: 36px;
+    color: white;
+}
+
+
+.contacto-contenido > p {
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    color: #cfcfcf;
+
+    line-height: 1.6;
+}
+
+
+/* CAMPOS */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+/* ETIQUETAS */
+
+.campo label {
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #ffffff;
+}
+
+
+/* INPUTS Y TEXTAREA */
+
+.campo input,
+.campo textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    background-color: #1c1c1c;
+
+    border: 1px solid #444444;
+    border-radius: 8px;
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+
+/* PLACEHOLDER */
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #888888;
+}
+
+
+/* CUANDO SE SELECCIONA UN CAMPO */
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #8b3f8b;
+
+    box-shadow: 0 0 8px rgba(139, 63, 139, 0.4);
+}
+
+
+/* TEXTAREA */
+
+.campo textarea {
+    resize: vertical;
+}
+
+
+/* BOTÓN */
+
+.contacto button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #6f2b6f;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+/* HOVER DEL BOTÓN */
+
+.contacto button:hover {
+    background-color: #8b3f8b;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .contacto {
+        width: 90%;
+
+        padding: 25px;
+    }
+
+    .contacto-contenido h1 {
+        font-size: 30px;
+    }
+
+}
+
+/* QUIZ LosS. */
+
+.quiz-page {
+    min-height: 100vh;
+    margin: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+        url('imagenes/FondoQuiz.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   TEST
+   ========================= */
+
+.quiz {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 60px auto;
+}
+
+
+/* TÍTULO */
+
+.quiz > h1 {
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-size: 38px;
+    color: white;
+}
+
+
+/* INTRODUCCIÓN */
+
+.quiz-intro {
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    color: #bdbdbd;
+    font-size: 17px;
+}
+
+
+/* =========================
+   TARJETA
+   ========================= */
+
+.quiz-card {
+    margin-bottom: 30px;
+    padding: 30px;
+
+    background-color: #111111;
+
+    border-radius: 15px;
+
+    border: 1px solid #292929;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* NÚMERO DE PREGUNTA */
+
+.quiz-card h3 {
+    margin: 0 0 20px;
+
+    color: #a85ca8;
+
+    font-size: 20px;
+}
+
+
+/* FRASE */
+
+.frase {
+    margin: 0 0 20px;
+
+    padding: 20px;
+
+    background-color: #1b1b1b;
+
+    border-left: 4px solid #6f2b6f;
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 20px;
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+
+/* PREGUNTA */
+
+.pregunta {
+    margin-bottom: 15px;
+
+    color: #d0d0d0;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   OPCIONES
+   ========================= */
+
+.opciones {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.opciones button {
+    flex: 1;
+
+    min-width: 200px;
+
+    padding: 13px 18px;
+
+    background-color: #1c1c1c;
+
+    border: 1px solid #444444;
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+/* HOVER */
+
+.opciones button:hover {
+    background-color: #6f2b6f;
+
+    border-color: #9b4f9b;
+
+    transform: translateY(-2px);
+}
+
+.opciones button.seleccionada {
+    border-color: #08982e;
+    background-color: rgba(8, 152, 46, 0.3);
+    box-shadow: 0 0 10px rgba(8, 152, 46, 0.35);
+}
+
+
+/* =========================
+   RESULTADO
+   ========================= */
+
+.resultado {
+    margin-top: 45px;
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: #111111;
+
+    border-radius: 15px;
+
+    border: 1px solid #292929;
+}
+
+
+.resultado h2 {
+    margin-top: 0;
+
+    color: white;
+}
+
+
+.resultado p {
+    color: #bdbdbd;
+}
+
+
+#puntaje {
+    display: block;
+
+    margin-top: 15px;
+
+    color: #a85ca8;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.estado-guardado {
+    margin: 14px 0 0;
+    color: #9ac9a4;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .quiz {
+        width: 90%;
+    }
+
+
+    .quiz > h1 {
+        font-size: 30px;
+    }
+
+
+    .quiz-card {
+        padding: 20px;
+    }
+
+
+    .frase {
+        font-size: 17px;
+    }
+
+
+    .opciones {
+        flex-direction: column;
+    }
+
+
+    .opciones button {
+        width: 100%;
+    }
+}
+
+/*curiosidades -----------------*/
+
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.curiosidades-header {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 60px auto 40px;
+
+    text-align: center;
+}
+
+
+.curiosidades-header h1 {
+    margin: 0 0 15px;
+
+    color: white;
+
+    font-size: 42px;
+}
+
+
+.curiosidades-header p {
+    margin: 0 auto;
+
+    max-width: 700px;
+
+    color: #cfcfcf;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.curiosidades {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.curiosidad-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin-bottom: 30px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background-color: #111111;
+
+    border-radius: 15px;
+
+    border-left: 4px solid #6f2b6f;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45);
+
+    transition: 0.3s ease;
+}
+
+
+/* EFECTO */
+
+.curiosidad-card:hover {
+    transform: translateX(6px);
+
+    border-left-color: #a85ca8;
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.curiosidad-card img {
+    width: 300px;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.curiosidad-info {
+    flex: 1;
+}
+
+
+.curiosidad-info h2 {
+    margin: 0 0 15px;
+
+    color: white;
+
+    font-size: 26px;
+}
+
+
+.curiosidad-info p {
+    margin: 0;
+
+    color: #d0d0d0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .curiosidades-header {
+        margin-top: 40px;
+    }
+
+
+    .curiosidades-header h1 {
+        font-size: 32px;
+    }
+
+
+    .curiosidad-card {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 20px;
+
+        gap: 20px;
+    }
+
+
+    .curiosidad-card img {
+        width: 100%;
+
+        height: 220px;
+    }
+
+
+    .curiosidad-info h2 {
+        font-size: 22px;
+    }
+
+
+    .curiosidad-info p {
+        font-size: 15px;
+    }
+
+}
+
+
